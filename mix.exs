@@ -2,13 +2,13 @@ defmodule OpenApiSpex.Mixfile do
   use Mix.Project
 
   @source_url "https://github.com/open-api-spex/open_api_spex"
-  @version "3.17.1"
+  @version "3.18.2"
 
   def project do
     [
       app: :open_api_spex,
       version: @version,
-      elixir: "~> 1.10",
+      elixir: "~> 1.11",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       consolidate_protocols: Mix.env() != :test,
@@ -70,7 +70,7 @@ defmodule OpenApiSpex.Mixfile do
       {:phoenix, "~> 1.3", only: [:dev, :test]},
       {:plug, "~> 1.7"},
       {:poison, "~> 3.0 or ~> 4.0 or ~> 5.0", optional: true},
-      {:ymlr, "~> 2.0 or ~> 3.0", optional: true}
+      {:ymlr, "~> 2.0 or ~> 3.0 or ~> 4.0 or ~> 5.0", optional: true}
     ]
   end
 

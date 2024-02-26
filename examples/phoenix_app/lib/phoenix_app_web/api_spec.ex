@@ -1,5 +1,17 @@
 defmodule PhoenixAppWeb.ApiSpec do
-  alias OpenApiSpex.{Components, Info, OpenApi, OAuthFlow, OAuthFlows, Paths, SecurityScheme}
+  alias OpenApiSpex.{
+    Components,
+    Info,
+    OpenApi,
+    OAuthFlow,
+    OAuthFlows,
+    Paths,
+    SecurityScheme,
+    Schema,
+    MediaType,
+    Response
+  }
+
   @behaviour OpenApi
 
   @impl OpenApi
@@ -25,12 +37,10 @@ defmodule PhoenixAppWeb.ApiSpec do
             }
           }
         },
-        schemas: %{
-          responses: %{
-            unprocessable_entity: %Response{
-              description: "Unprocessable Entity",
-              content: %{"application/json" => %MediaType{schema: %Schema{type: :object}}}
-            }
+        responses: %{
+          unprocessable_entity: %Response{
+            description: "Unprocessable Entity",
+            content: %{"application/json" => %MediaType{schema: %Schema{type: :object}}}
           }
         }
       },

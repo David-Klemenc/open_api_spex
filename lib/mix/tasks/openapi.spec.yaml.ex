@@ -1,4 +1,5 @@
 defmodule Mix.Tasks.Openapi.Spec.Yaml do
+  @default_filename "openapi.yaml"
   @moduledoc """
   Serialize the given OpenApi spec module to a YAML file.
 
@@ -17,11 +18,13 @@ defmodule Mix.Tasks.Openapi.Spec.Yaml do
   * `--vendor-extensions` - Whether to include open_api_spex OpenAPI vendor extensions
     (defaults to true)
 
+  * `--quiet` - Whether to disable output printing (defaults to false)
+
+  * `--filename` - The output filename (defaults to "#{@default_filename}")
   """
   use Mix.Task
   require Mix.Generator
 
-  @default_filename "openapi.yaml"
   @dialyzer {:nowarn_function, encoder: 0}
 
   @impl Mix.Task

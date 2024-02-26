@@ -1,4 +1,5 @@
 defmodule Mix.Tasks.Openapi.Spec.Json do
+  @default_filename "openapi.json"
   @moduledoc """
   Serialize the given OpenApi spec module to a JSON file.
 
@@ -20,11 +21,12 @@ defmodule Mix.Tasks.Openapi.Spec.Json do
   * `--vendor-extensions` - Whether to include open_api_spex OpenAPI vendor extensions
     (defaults to true)
 
+  * `--quiet` - Whether to disable output printing (defaults to false)
+
+  * `--filename` - The output filename (defaults to "#{@default_filename}")
   """
   use Mix.Task
   require Mix.Generator
-
-  @default_filename "openapi.json"
 
   @impl true
   def run(argv) do
